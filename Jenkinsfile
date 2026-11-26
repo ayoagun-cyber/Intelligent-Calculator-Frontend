@@ -17,7 +17,7 @@ pipeline {
     AWS_REGION = 'us-east-1'
     ECR_REGISTRY = '983829774214.dkr.ecr.us-east-1.amazonaws.com'
     ECR_REPOSITORY = 'calculator/frontend'
-    PROD_HOST = 'ec2-54-162-80-137.compute-1.amazonaws.com'
+    PROD_HOST = '172.31.34.253'
     CONTAINER_NAME = 'calculator-frontend'
     HOST_PORT = '3000'
   }
