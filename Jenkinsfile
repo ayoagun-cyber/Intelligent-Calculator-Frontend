@@ -13,6 +13,12 @@ pipeline {
     disableConcurrentBuilds()
     timeout(time: 30, unit: 'MINUTES')
   }
+  triggers {
+    // GitHub POSTs /github-webhook/ on each push.
+    githubPush()
+    // Backup if GitHub cannot reach port 8080.
+    pollSCM('H/15 * * * *')
+  }
   environment {
     AWS_REGION = 'us-east-1'
     ECR_REGISTRY = '983829774214.dkr.ecr.us-east-1.amazonaws.com'
